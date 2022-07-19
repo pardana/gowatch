@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import classes from './App.module.css';
 import ProductData from './ProductData'
+import ProductPreview from './ProductPreview';
 
 function App() {
   const currentHour = new Date().getHours() > 9 ? new Date().getHours() : '0' + new Date().getHours()
@@ -16,15 +16,7 @@ function App() {
 
       <div className={classes.MainContainer}>
         <div className={classes.ProductPreview}>
-          <img src="https://imgur.com/iOeUBV7.png" alt="Product Review" />
-
-          {/* <div className={classes.TimeSection}>
-            <p>{`${currentHour}:${CurrentMinutes}`}</p>
-          </div> */}
-          <div className={classes.HeartBeatSection}>
-            <i class="fas fa-heartbeat"></i>
-            <p>78</p>
-          </div>
+          <ProductPreview />
         </div>
 
         <div className={classes.ProductData}>
