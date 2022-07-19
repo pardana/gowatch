@@ -8,13 +8,12 @@ import Topbar from "./Topbar/Topbar";
 class App extends Component {
   state = {
     productData: ProductData,
-    currentPreviewImage: "https://imgur.com/iOeUBV7.png",
+    currentPreviewImagePos: 0,
     showHeartBeatSection: false,
   };
 
   onColorOptionClick = (pos) => {
-    const updatedPreviewImage = this.state.productData.colorOptions[pos].imageUrl;
-    this.setState({ currentPreviewImage: updatedPreviewImage });
+    this.setState({ currentPreviewImagePos: pos });
   };
 
   render() {
@@ -25,15 +24,15 @@ class App extends Component {
         <div className={classes.MainContainer}>
           <div className={classes.ProductPreview}>
             <ProductPreview
-              currentPreviewImage={this.state.currentPreviewImage}
-              showHeartBeatSection={this.state.showHeartBeatSection}
+              currentPreviewImage={this.state.productData.colorOptions[this.state.currentPreviewImagePos].imageUrl}
+              showHeartBeatSection={this.state.showHeartBeatSection} 
             />
           </div>
 
           <div className={classes.ProductData}>
             <ProductDetails
               data={this.state.productData}
-              onColorOptionClick={this.onColorOptionClick}
+              onColorOptionClick={this.onColorOptionClick} currentPreviewImagePos={this.state.currentPreviewImagePos}
             />
           </div>
         </div>
