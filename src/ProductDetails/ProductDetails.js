@@ -14,6 +14,7 @@ export default function ProductDetails(props) {
         className={classArr.join(" ")}
         src={item.imageUrl}
         alt={item.styleName}
+        onClick={() => props.onColorOptionClick(pos)}
       />
     );
   });

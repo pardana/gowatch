@@ -9,7 +9,12 @@ class App extends Component {
   state = {
     productData: ProductData,
     currentPreviewImage: "https://imgur.com/iOeUBV7.png",
-    showHeartBeatSection: true,
+    showHeartBeatSection: false,
+  };
+
+  onColorOptionClick = (pos) => {
+    const updatedPreviewImage = this.state.productData.colorOptions[pos].imageUrl;
+    this.setState({ currentPreviewImage: updatedPreviewImage });
   };
 
   render() {
@@ -26,7 +31,10 @@ class App extends Component {
           </div>
 
           <div className={classes.ProductData}>
-            <ProductDetails data={this.state.productData} />
+            <ProductDetails
+              data={this.state.productData}
+              onColorOptionClick={this.onColorOptionClick}
+            />
           </div>
         </div>
       </div>
