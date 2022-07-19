@@ -16,6 +16,14 @@ class App extends Component {
     this.setState({ currentPreviewImagePos: pos });
   };
 
+  onFeatureItemClick = (pos) => {
+    let updatedState = false;
+    if(pos === 1){
+      updatedState = true
+    }
+    this.setState({showHeartBeatSection: updatedState})
+  }
+
   render() {
     return (
       <div className="App">
@@ -32,7 +40,7 @@ class App extends Component {
           <div className={classes.ProductData}>
             <ProductDetails
               data={this.state.productData}
-              onColorOptionClick={this.onColorOptionClick} currentPreviewImagePos={this.state.currentPreviewImagePos}
+              onColorOptionClick={this.onColorOptionClick} currentPreviewImagePos={this.state.currentPreviewImagePos} onFeatureItemClick={this.onFeatureItemClick} showHeartBeatSection={this.state.showHeartBeatSection}
             />
           </div>
         </div>

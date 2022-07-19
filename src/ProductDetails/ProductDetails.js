@@ -21,12 +21,14 @@ export default function ProductDetails(props) {
 
   const featureList = props.data.featureList.map((item, pos) => {
     const classArr = [classes.FeaturesItem];
-    if (pos === 0) {
+    if (pos === 1 && props.showHeartBeatSection) {
+      classArr.push(classes.SelectedFeaturesItem);
+    }else if(pos === 0 && !props.showHeartBeatSection){
       classArr.push(classes.SelectedFeaturesItem);
     }
 
     return (
-      <button key={pos} className={classArr.join(" ")}>
+      <button key={pos} className={classArr.join(" ")} onClick={() => props.onFeatureItemClick(pos)}>
         {item}
       </button>
     );

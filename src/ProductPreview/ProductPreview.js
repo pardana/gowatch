@@ -17,7 +17,7 @@ const ProductPreview = (props) => {
 
       {props.showHeartBeatSection ? (
         <div className={classes.HeartBeatSection}>
-          <i class="fas fa-heartbeat"></i>
+          <i className ="fas fa-heartbeat"></i>
           <p>78</p>
         </div>
       ) : (
