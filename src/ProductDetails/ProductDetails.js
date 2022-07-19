@@ -2,6 +2,10 @@ import React from "react";
 import classes from "./ProductDetails.module.css";
 
 export default function ProductDetails(props) {
+  const buy = () =>{
+    alert('Selamat! Apple watch berhasil ditambahkan.')
+  }
+
   const colorOptions = props.data.colorOptions.map((item, pos) => {
     const classArr = [classes.ProductImage];
     if (pos === props.currentPreviewImagePos) {
@@ -21,9 +25,7 @@ export default function ProductDetails(props) {
 
   const featureList = props.data.featureList.map((item, pos) => {
     const classArr = [classes.FeaturesItem];
-    if (pos === 1 && props.showHeartBeatSection) {
-      classArr.push(classes.SelectedFeaturesItem);
-    }else if(pos === 0 && !props.showHeartBeatSection){
+    if (pos === props.currentSelectedFeature) {
       classArr.push(classes.SelectedFeaturesItem);
     }
 
@@ -45,7 +47,7 @@ export default function ProductDetails(props) {
       <h3 className={classes.SectionHeading}>Features</h3>
       <div>{featureList}</div>
 
-      <button className={classes.PrimaryButton}>Buy Now</button>
+      <button onClick={buy} className={classes.PrimaryButton}>Buy Now</button>
     </div>
   );
 }
