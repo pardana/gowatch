@@ -2,21 +2,6 @@ body{
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.Topbar{
-  width: 100%;
-  background-color: #282c34;
-  padding: 12px 48px;
-  text-align: center;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.Topbar > img {
-  width: 100px;
-}
-
 .MainContainer{
   padding: 4% 12%;
   margin-top: 72px;
@@ -31,66 +16,6 @@ body{
   position: relative;
 }
 
-.ProductData{
+.ProductData {
   width: 50%;
-}
-
-.ProductTitle{
-  font-size: 48px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 16px;
-}
-
-.ProductDescription{
-  font-size: 18px;
-  color: rgba(0, 0, 0, 0.8);
-  margin-top: 0;
-  margin-bottom: 16px;
-}
-
-.SectionHeading{
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.ProductImage{
-  width: 100%;
-  max-width: 80px;
-  border-radius: 8px;
-  margin-right: 12px;
-  border: 2px solid transparent;
-  cursor: pointer;
-}
-
-.SelectedProductImage{
-  border: 2px solid teal;
-}
-
-.FeaturesItem{
-  background-color: gainsboro;
-  border-radius: 6px;
-  border: 0;
-  padding: 12px 24px;
-  min-width: 80px;
-  margin-right: 12px;
-  text-align: center;
-  cursor: pointer;
-  font-weight: 500;
-  box-sizing: content-box;
-}
-
-.SelectedFeaturesItem{
-  color: white;
-  background-color: gray;
-}
-
-.PrimaryButton{
-  color: white;
-  background-color: teal;
-  font-size: 20px;
-  border-radius: 8px;
-  border: 0;
-  padding: 12px 24px;
-  margin-top: 16px;
 }
